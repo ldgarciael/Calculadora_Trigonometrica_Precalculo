@@ -13,7 +13,7 @@ h1:focus {
 /* Menú lateral flotante con glassmorphism */
 .side-menu {
     position: fixed;
-    top: 45%;
+    top: 25%;
     left: 20px;
     transform: translateY(-50%);
     display: flex;
