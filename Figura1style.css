@@ -1,0 +1,127 @@
+/* Fuente base moderna */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f6f9;
+    color: #333;
+}
+
+/* Títulos sin borde */
+h1:focus {
+    outline: none;
+}
+
+/* Menú lateral flotante con glassmorphism */
+.side-menu {
+    position: fixed;
+    top: 45%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(30, 30, 47, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 12px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.side-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background-color: rgba(41, 41, 61, 0.85);
+    transition: all 0.3s ease;
+}
+
+.side-menu a:hover {
+    background-color: #4e4efc;
+    transform: translateX(8px);
+}
+
+/* Tarjetas modernas */
+.card {
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
+}
+
+.card-header {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+/* Formularios bien espaciados */
+.form-group label {
+    font-weight: 500;
+}
+
+.form-control {
+    border-radius: 12px;
+    border: 1px solid #ced4da;
+    padding: 10px;
+}
+
+/* Botones con estilo */
+.btn {
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Resultados con estilo */
+.alert {
+    border-radius: 10px;
+}
+li {
+    list-style-type: none; /* Quitar las viñetas */
+    padding: 0; /* Eliminar el padding */
+    margin: 0; /* Eliminar el margen */
+}
+/* Visualización de figuras */
+.triangle-container {
+    border: 2px dashed #4e4efc;
+    border-radius: 12px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Scroll en visualización */
+.triangle-scroll-container {
+    overflow: auto;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+.triangle-scroll-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.triangle-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.triangle-scroll-container::-webkit-scrollbar-thumb {
+    background: #4e4efc;
+    border-radius: 4px;
+}
+
+.triangle-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #3b3bd6;
+}
+
+/* Lista de resultados finales */
+.list-group-item {
+    border-radius: 8px !important;
+    margin-bottom: 6px;
+}

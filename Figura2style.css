@@ -1,0 +1,208 @@
+/* Fuente base moderna */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f6f9;
+    color: #333;
+}
+
+/* Títulos sin borde */
+h1 {
+    outline: none;
+}
+
+/* Menú lateral flotante con glassmorphism */
+.side-menu {
+    position: fixed;
+    top: 45%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(30, 30, 47, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 20px 12px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+.side-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background-color: rgba(41, 41, 61, 0.85);
+    transition: all 0.3s ease;
+}
+
+.side-menu a:hover {
+    background-color: #4e4efc;
+    transform: translateX(8px);
+}
+
+/* Tarjetas modernas */
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.card-body h4, .card-body h5 {
+    margin-top: 1.5rem;
+    font-weight: 600;
+}
+
+/* Estilo de formularios */
+input.form-control {
+    border-radius: 0.5rem;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+}
+
+input.form-control:focus {
+    border-color: #1b6ec2;
+    box-shadow: 0 0 0 0.2rem rgba(27, 110, 194, 0.25);
+}
+
+/* Botones con estilo */
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #155a9c;
+    border-color: #144e88;
+}
+
+/* Alertas */
+.alert-info {
+    background-color: #e9f7fe;
+    border-color: #bce0fd;
+    color: #31708f;
+    border-radius: 0.5rem;
+}
+
+.alert-success {
+    border-radius: 0.5rem;
+}
+
+/* Listas */
+ul.list-group {
+    margin-top: 1rem;
+}
+
+.list-group-item {
+    font-size: 0.95rem;
+    border-radius: 0.5rem; /* Bordes redondeados */
+    margin-bottom: 6px; /* Margen inferior */
+}
+
+/* Badges */
+.badge {
+    font-size: 0.9rem;
+}
+
+.badge.bg-primary {
+    background-color: #1b6ec2 !important;
+}
+
+.badge.bg-danger {
+    background-color: #dc3545 !important;
+}
+
+/* Imágenes */
+img {
+    border-radius: 0.5rem;
+    border: 1px solid #dee2e6;
+}
+
+/* Visualización de figuras */
+.triangle-container {
+    width: auto;
+    height: auto;
+    position: relative;
+    border: 3px dashed #adb5bd; /* Borde de triángulo */
+    border-radius: 0.5rem; /* Bordes redondeados */
+    padding: 1rem; /* Espaciado interno */
+    background-color: #ffffff; /* Color de fondo */
+    margin-top: 1rem; /* Margen superior */
+}
+
+/* Scroll en visualización */
+.triangle-scroll-container {
+    overflow: auto; /* Habilitar scroll */
+    border: 1px solid #ddd; /* Borde del
+        background-color: #f9f9f9; /* Color de fondo */
+        border-radius: 0.5rem; /* Bordes redondeados */
+        padding: 0.5rem; /* Espaciado interno */
+    }
+    
+    /* Scrollbar personalizado */
+    .triangle-scroll-container::-webkit-scrollbar {
+        width: 8px; /* Ancho del scrollbar */
+        height: 8px; /* Altura del scrollbar */
+    }
+    
+    .triangle-scroll-container::-webkit-scrollbar-track {
+        background: #f1f1f1; /* Color de fondo del track */
+        border-radius: 4px; /* Bordes redondeados del track */
+    }
+    
+    .triangle-scroll-container::-webkit-scrollbar-thumb {
+        background: #28a745; /* Color del thumb */
+        border-radius: 4px; /* Bordes redondeados del thumb */
+    }
+    
+    .triangle-scroll-container::-webkit-scrollbar-thumb:hover {
+        background: #218838; /* Color del thumb al pasar el mouse */
+    }
+    li {
+        list-style-type: none; /* Quitar las viñetas */
+        padding: 0; /* Eliminar el padding */
+        margin: 0; /* Eliminar el margen */
+    }
+    /* Errores y validaciones Blazor (si aplican en este HTML también) */
+    .valid.modified:not([type=checkbox]) {
+        outline: 1px solid #26b050; /* Contorno para elementos válidos */
+    }
+    
+    .invalid {
+        outline: 1px solid red; /* Contorno para elementos inválidos */
+    }
+    
+    .validation-message {
+        color: red; /* Color del mensaje de validación */
+    }
+    
+    /* Estilo para el UI de errores de Blazor */
+    #blazor-error-ui {
+        background: lightyellow; /* Color de fondo del UI de errores */
+        bottom: 0; /* Posición en la parte inferior */
+        display: none; /* Ocultar por defecto */
+        left: 0; /* Alinear a la izquierda */
+        padding: 0.6rem 1.25rem 0.7rem 1.25rem; /* Espaciado interno */
+        position: fixed; /* Posición fija */
+        width: 100%; /* Ancho completo */
+        z-index: 1000; /* Z-index alto para superposición */
+        box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2); /* Sombra */
+    }
+    
+    #blazor-error-ui .dismiss {
+        cursor: pointer; /* Cambiar cursor al pasar el mouse */
+        position: absolute; /* Posición absoluta */
+        right: 0.75rem; /* Alinear a la derecha */
+        top: 0.5rem; /* Alinear en la parte superior */
+    }

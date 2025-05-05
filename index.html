@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Figura1 </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="Figura1style.css">
+</head>
+<body>
+    <nav class="side-menu">
+        <a href="Figura2.html">Figura 2</a>
+        <a href="Figura3.html">Figura 3</a>
+    </nav>    
+  
+    <div class="container">
+        <h1 class="text-center my-4">Leyes Trigonométricas Figura 1</h1>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3>Paso 1: Cálculo de Triángulos</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            A continuación ingrese los datos para encontrar el ángulo formado entre las cuerdas BA y BC
+                        </div>
+                        
+                        <h4>Primer Triángulo</h4>
+                        <div class="form-group">
+                            <label for="catetoA">Ingresa el valor del primer cateto:</label>
+                            <input type="number" id="catetoA" class="form-control" step="0.01" placeholder="Ingrese valor" />
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="catetoB">Ingresa el valor del segundo cateto:</label>
+                            <input type="number" id="catetoB" class="form-control" step="0.01" placeholder="Ingrese valor" />
+                        </div>
+                        
+                        <div id="resultadoPaso1" class="alert alert-success mt-3" style="display: none;">
+                            Hipotenusa del primer triángulo: <span id="hipotenusa1Resultado"></span>
+                        </div>
+
+                        <div id="paso2Form" style="display: none;">
+                            <h4 class="mt-3">Segundo Triángulo</h4>
+                            <div class="form-group">
+                                <label for="catetoOtro">Ingresa el primer valor del cateto:</label>
+                                <input type="number" id="catetoOtro" class="form-control" step="0.01" placeholder="Ingrese valor" />
+                            </div>
+                            <div class="form-group mt-2">
+                                <label for="catetoOtro2">Ingresa el segundo valor del cateto:</label>
+                                <input type="number" id="catetoOtro2" class="form-control" step="0.01" placeholder="Ingrese valor" />
+                            </div>
+                        </div>
+                        
+                        <div id="resultadoPaso2" class="alert alert-success mt-3" style="display: none;">
+                            Hipotenusa del segundo triángulo: <span id="hipotenusa2Resultado"></span>
+                        </div>
+
+                        <div id="paso3Form" style="display: none;">
+                            <h4 class="mt-3">Tercer Triángulo</h4>
+                            <div class="form-group">
+                                <label for="altura">Ingresa el valor de la altura:</label>
+                                <input type="number" id="altura" class="form-control" step="0.01" placeholder="Ingrese valor" />
+                            </div>
+                        </div>
+                        
+                        <div id="resultadoPaso3" class="alert alert-success mt-3" style="display: none;">
+                            Hipotenusa del tercer triángulo: <span id="hipotenusa3Resultado"></span>
+                        </div>
+
+                        <div id="paso4Info" style="display: none;">
+                            <h4 class="mt-3">Cuarto Triángulo</h4>
+                            <p>El cateto C es igual a la altura: <span id="alturaValor"></span></p>
+                            <p>El cateto D es igual a la hipotenusa del segundo triángulo: <span id="hipotenusa2Valor"></span></p>
+                        </div>
+                        
+                        <div id="resultadoPaso4" class="alert alert-success mt-3" style="display: none;">
+                            Hipotenusa del cuarto triángulo: <span id="hipotenusa4Resultado"></span>
+                        </div>
+
+                        <div id="paso5Info" style="display: none;">
+                            <h4 class="mt-3">Quinto Triángulo</h4>
+                            <p>Usando la base calculada y las hipotenusas anteriores</p>
+                        </div>
+                        
+                        <button id="calcularPaso1" class="btn btn-primary mt-3">Calcular Primer Triángulo</button>
+                        <button id="calcularPaso2" class="btn btn-success mt-3" style="display: none;">Continuar con Segundo Triángulo</button>
+                        <button id="calcularPaso3" class="btn btn-info mt-3" style="display: none;">Continuar con Tercer Triángulo</button>
+                        <button id="calcularPaso4" class="btn btn-warning mt-3" style="display: none;">Continuar con Cuarto Triángulo</button>
+                        <button id="calcularPaso5" class="btn btn-danger mt-3" style="display: none;">Calcular Quinto Triángulo y Finalizar</button>
+                        
+                        <div id="resultadoFinal" style="display: none;">
+                            <div class="alert alert-success mt-3">
+                                <h4 class="alert-heading">¡Cálculos Completados!</h4>
+                                <p>Ángulo C calculado: <span id="anguloCResultado"></span>°</p>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <h4>Resultados Finales:</h4>
+                                <div class="card">
+                                    <div class="card-header bg-primary text-white">
+                                        <h5 class="mb-0">Resumen de Todos los Cálculos</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-primary">
+                                                Hipotenusa del primer triángulo
+                                                <span id="hipotenusa1Final" class="badge bg-primary rounded-pill"></span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-success">
+                                                Hipotenusa del segundo triángulo
+                                                <span id="hipotenusa2Final" class="badge bg-success rounded-pill"></span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-info">
+                                                Hipotenusa del tercer triángulo
+                                                <span id="hipotenusa3Final" class="badge bg-info rounded-pill"></span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-warning">
+                                                Hipotenusa del cuarto triángulo
+                                                <span id="hipotenusa4Final" class="badge bg-warning rounded-pill"></span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center list-group-item-danger">
+                                                Base del quinto triángulo
+                                                <span id="baseTrianguloFinal" class="badge bg-danger rounded-pill"></span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center active">
+                                                El ángulo C es
+                                                <span id="anguloCFinal" class="badge bg-light text-dark rounded-pill"></span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <button id="reiniciar" class="btn btn-primary mt-3">Reiniciar Cálculos</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3>Paso 2: Fórmulas Utilizadas y figura</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Hipotenusa (Teorema de Pitágoras): h = √(a² + b²)</li>
+                            <li class="list-group-item">Ley de Cosenos: cos(C) = (a² + b² - c²) / (2ab)</li>
+                        </ul>
+                        <div class="text-center mt-3">
+                            <center><img id="figura3Imagen" src="Figuras/Figura1.jpg" width="350px" height="325px"></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header bg-primary text-white">
+                        <h3>Paso 3: Visualización</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="visualizacionInicial" class="text-center">
+                            <p>Complete los datos del primer triángulo y haga clic en Calcular para continuar</p>
+                        </div>
+                        
+                        <div id="visualizacionPaso1" style="display: none;">
+                            <h5>Primer Triángulo</h5>
+                            <div class="triangle-container" id="triangulo1Container">
+                                <!-- Se llenará dinámicamente mediante JavaScript -->
+                            </div>
+                        </div>
+
+                        <div id="visualizacionPaso2" class="mt-3" style="display: none;">
+                            <h5>Segundo Triángulo</h5>
+                            <div class="triangle-container" id="triangulo2Container">
+                                <!-- Se llenará dinámicamente mediante JavaScript -->
+                            </div>
+                        </div>
+
+                        <div id="visualizacionPaso3" class="mt-3" style="display: none;">
+                            <h5>Tercer Triángulo</h5>
+                            <div class="triangle-container" id="triangulo3Container">
+                                <!-- Se llenará dinámicamente mediante JavaScript -->
+                            </div>
+                        </div>
+
+                        <div id="visualizacionPaso4" class="mt-3" style="display: none;">
+                            <h5>Cuarto Triángulo</h5>
+                            <div class="triangle-container" id="triangulo4Container">
+                                <!-- Se llenará dinámicamente mediante JavaScript -->
+                            </div>
+                        </div>
+
+                        <div id="visualizacionPaso5" class="mt-3" style="display: none;">
+                            <h5>Quinto Triángulo y Ángulo C</h5>
+                            <div class="triangle-container" id="triangulo5Container">
+                                <!-- Se llenará dinámicamente mediante JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="text-center py-4 mt-5">
+        <strong><p>Desarrollado por:</p></strong>
+        <li>Christopher Abdel De la Cruz Gálvez</li>
+                <li>Rosemberg Emanuel Escobar Caballeros</li>
+                <li>Santiago Raúl Marenco Díaz</li>
+                <li>José Javier Vega de León</li>
+                <li>Luis David García Elías</li>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="Figura1script.js"></script>
+
+</body>
+</html>

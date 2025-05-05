@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="Figura2style.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="side-menu">
+        <a href="index.html">Figura 1</a>
+        <a href="Figura3.html">Figura 3</a>
+    </nav>    
+    <div class="container">
+        <h1 class="text-center my-4">Leyes Trigonométricas Figura 2</h1>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3>Paso 1: Cálculo de Triángulos</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-info">
+                            A continuación ingrese los datos para encontrar el angulo formado por los cables BE y BD 
+                        </div>
+                        
+                        <h4>Primer Triángulo</h4>
+                        <div class="form-group">
+                            <label for="catetoA">Ingresa el valor del primer cateto:</label>
+                            <input type="number" id="catetoA" class="form-control" step="0.01" placeholder="Ingrese valor" />
+                        </div>
+                        <div class="form-group mt-2">
+                            <label for="catetoB">Ingresa el valor del segundo cateto:</label>
+                            <input type="number" id="catetoB" class="form-control" step="0.01" placeholder="Ingrese valor" />
+                        </div>
+                        
+                        <div id="paso1Resultados" style="display: none;">
+                            <div class="alert alert-success mt-3">
+                                Hipotenusa del primer triángulo: <span id="hipotenusaValor"></span>
+                            </div>
+                        
+                            <h4 class="mt-3">Segundo Triángulo</h4>
+                            <div class="form-group">
+                                <label for="altura">Ingresa la altura:</label>
+                                <input type="number" id="altura" class="form-control" step="0.01" placeholder="Ingrese valor" />
+                            </div>
+                        </div>
+                        
+                        <button id="calcularPrimerTriangulo" class="btn btn-primary mt-3">Calcular Primer Triángulo</button>
+                        <button id="calcularSegundoTriangulo" class="btn btn-primary mt-3" style="display: none;">Calcular Segundo Triángulo</button>
+                        
+                        <div id="resultadosFinales" class="mt-4" style="display: none;">
+                            <h4>Resultados:</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Hipotenusa del primer triángulo
+                                    <span class="badge bg-primary rounded-pill" id="hipotenusa1Final"></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Hipotenusa del segundo triángulo
+                                    <span class="badge bg-primary rounded-pill" id="hipotenusa2Final"></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Base del tercer triángulo (2 × cateto B)
+                                    <span class="badge bg-primary rounded-pill" id="baseTrianguloFinal"></span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    El ángulo C es
+                                    <span class="badge bg-danger rounded-pill" id="anguloCFinal"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3>Paso 2: Fórmulas Utilizadas y figura</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item">Hipotenusa (Teorema de Pitágoras): h = √(a² + b²)</li>
+                            <li class="list-group-item">Ley de Cosenos: cos(C) = (a² + b² - c²) / (2ab)</li>
+                            <div class="text-center mt-3">
+                                <img src="Figuras/Figura2.jpg" alt="Figura 2" width="350px" height="325px">
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header bg-primary text-white">
+                        <h3>Paso 3: Visualización</h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="primerTriangulo" style="display: none;">
+                            <h5>Primer Triángulo</h5>
+                            <div class="triangle-container" id="triangulo1Container">
+                                <!-- El SVG se insertará con JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div id="segundoTriangulo" style="display: none;">
+                            <h5>Segundo Triángulo</h5>
+                            <div class="triangle-container" id="triangulo2Container">
+                                <!-- El SVG se insertará con JavaScript -->
+                            </div>
+                        </div>
+
+                        <div id="tercerTriangulo" style="display: none;">
+                            <h5>Tercer Triángulo (Ángulo C)</h5>
+                            <div class="triangle-container" id="triangulo3Container">
+                                <!-- El SVG se insertará con JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div id="mensaje-inicial" class="text-center">
+                            <p>Complete los datos del primer triángulo y haga clic en Calcular para continuar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="Figura2script.js"></script>
+    <footer class="text-center py-4 mt-5">
+        <strong><p>Desarrollado por:</p></strong>
+        <li>Christopher Abdel De la Cruz Gálvez</li>
+                <li>Rosemberg Emanuel Escobar Caballeros</li>
+                <li>Santiago Raúl Marenco Díaz</li>
+                <li>José Javier Vega de León</li>
+                <li>Luis David García Elías</li>
+    </footer>
+</body>
+</html>
